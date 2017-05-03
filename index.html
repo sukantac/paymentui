@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="formValidation">
+
+<head>
+    <title>Debit Card Payment</title>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div ng-controller="myFormCtrl" class="form-group col-xs-8">
+        <h3>welcome to payment gateway</h3>
+        <form name="myform">
+            <fieldset>
+                <legend>Debit Card Payment</legend>
+                <p>
+                    <label for="name">Enter your Name:</label>
+                    <input type="text" ng-model="name" id="name" ng-change="transformName()" placeholder="your name" ng-required="true" class="form-control" />
+                </p>
+                <p>
+                    <label for="cardtype">Chhose your card:</label><br>
+                    <select class="form-control" id="cardtype">
+                        <option value="maestro">Maestro</option>
+                          <option value="rupay">rupay</option>
+                          <option value="neo">neo</option>
+                        </select>
+                </p>
+                <p>
+                    <label for="number">Enter card number :</label>
+                    <input type="text" id="number" ng-model="debitnumber" ng-change="cardFormat()" placeholder="card number" maxlength="19" ng-required="true" class="form-control" />
+                </p>
+
+                <button ng-click=" myform.$valid && submit() " class="btn btn-danger">Submit Details</button>
+            </fieldset>
+        </form>
+        <div class="modall">
+            <h2>your submission successfully recorded</h2>
+        </div>
+    </div>
+    <script src="js/app.js "></script>
+    <script src="js/controller.js "></script>
+</body>
+
+</html>
