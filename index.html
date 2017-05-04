@@ -16,7 +16,7 @@
                 <legend>Debit Card Payment</legend>
                 <p>
                     <label for="name">Enter your Name:</label>
-                    <input type="text" ng-model="name" id="name" ng-change="transformName()" placeholder="your name" ng-required="true" class="form-control" />
+                    <input type="text" ng-model="name" id="name" placeholder="your name" ng-required="true" class="form-control" enter restrictnumeric/>
                 </p>
                 <p>
                     <label for="cardtype">Chhose your card:</label><br>
@@ -28,7 +28,7 @@
                 </p>
                 <p>
                     <label for="number">Enter card number :</label>
-                    <input type="text" id="number" ng-model="debitnumber" ng-change="cardFormat()" placeholder="card number" maxlength="19" ng-required="true" class="form-control" />
+                    <input type="text" id="number" ng-model="debitnumber" placeholder="card number" maxlength="19" ng-required="true" class="form-control" insert restrictalpha />
                 </p>
 
                 <button ng-click=" myform.$valid && submit() " class="btn btn-danger">Submit Details</button>
@@ -40,6 +40,7 @@
     </div>
     <script src="js/app.js "></script>
     <script src="js/controller.js "></script>
+    <script src="js/directive.js"></script>
 </body>
 
 </html>
